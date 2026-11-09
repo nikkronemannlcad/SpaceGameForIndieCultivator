@@ -11,7 +11,7 @@ public class BulletSCript : MonoBehaviour
     {
             rb = GetComponent<Rigidbody>();
             wall = GameObject.FindWithTag("Wall");
-            enemy = GameObject.FindWithTag("Enemy");
+            //enemy = GameObject.FindWithTag("Enemy");
     }
     // Update is called once per frame
     void Update()
@@ -28,6 +28,7 @@ public class BulletSCript : MonoBehaviour
         }
         if (other.CompareTag("Enemy"))
         {
+            enemy = other.gameObject;
             Destroy(enemy);
             Destroy(gameObject);
         }
