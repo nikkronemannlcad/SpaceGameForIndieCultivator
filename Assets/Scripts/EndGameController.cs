@@ -9,6 +9,7 @@ public class EndGameController : MonoBehaviour
     
     public ShipDeposit sd;
     public PlayerHealthScript phs;
+    public PlayerSpawner ps;
     [SerializeField] private string thisScene;
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject loseScreen;
@@ -19,12 +20,19 @@ public class EndGameController : MonoBehaviour
         {
             winScreen.SetActive(true);
             Time.timeScale = 0.0f;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         if (phs.playerHitPoints <= 0) //when you lose
         {
+            Debug.Log("playerlost");
             loseScreen.SetActive(true);
             Time.timeScale = 0.0f;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true; 
         }
 
         //to quit the game whenever

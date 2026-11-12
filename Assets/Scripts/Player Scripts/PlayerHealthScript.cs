@@ -1,13 +1,19 @@
 using Mono.Cecil.Cil;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerHealthScript : MonoBehaviour
 {
     public int playerHitPoints = 0;
 
-    //hi nik sorry making ur int public so i can access it in the EndGameController :P
-    //also perchance delete this and write a full comment on this script for points >:D
+    //hi nik sorry making ur int public so i can access it in the EndGameController :P -AD
+    //also perchance delete this and write a full comment on this script for points >:D -AD
+
+    //also adding temp health display so i can test it -AD
+
+    public TextMeshProUGUI healthDisplay;
 
     private GameObject spawnpoint;
     private void Start()
@@ -21,6 +27,9 @@ public class PlayerHealthScript : MonoBehaviour
         {
             Respawn();
         }
+
+        //health check:
+        healthDisplay.text = playerHitPoints.ToString();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -35,7 +44,7 @@ public class PlayerHealthScript : MonoBehaviour
         //ADD LOGIC
     }
 
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         //ADD IFRAME LOGIC
         playerHitPoints -= damage;

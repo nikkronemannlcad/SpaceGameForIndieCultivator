@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 movement;
     private bool jumpPressed;
 
+    //player health script for damage
+    public PlayerHealthScript phs;
+
+
     //Gonna Start Testing changing the angle for movement (Hansen please make the gun shoot based on which direction character is facing)
     //Most likely going to need to nerf strafing and back strafing because movement is a little cooked
     //(I might fix but if one of you guys is interested in attempting go for it on your own branch).
@@ -51,5 +55,16 @@ public class PlayerController : MonoBehaviour
         Vector3 velocity = move * speed;
         velocity.y = jumpVelocity;
         characterController.Move(velocity * Time.deltaTime);
+    }
+
+    //hi its me aurora again hijacking your script
+    //dropping how the player takes damagage here and referencing the player health script hereee
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            phs.TakeDamage(1);
+        }
     }
 }
