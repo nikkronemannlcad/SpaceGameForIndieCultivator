@@ -637,17 +637,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 180332511}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &382912209 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2686544746260936374, guid: dd9a099b09ab2fe46a64d31ffa3580e8, type: 3}
-  m_PrefabInstance: {fileID: 576672546}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07860d2d69106e4a936e3eccf6b41f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawner
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,7 +1946,7 @@ GameObject:
   - component: {fileID: 840660265}
   - component: {fileID: 840660266}
   m_Layer: 0
-  m_Name: UI
+  m_Name: Temp UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5121,7 +5110,7 @@ GameObject:
   - component: {fileID: 2055803884}
   - component: {fileID: 2055803883}
   m_Layer: 0
-  m_Name: EndManager
+  m_Name: WinManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5140,11 +5129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndGameController
   sd: {fileID: 1307540739}
-  phs: {fileID: -215647196306026760, guid: c2c07645c0e9a3346993472b74a5f3c6, type: 3}
-  ps: {fileID: 382912209}
-  thisScene: Level1_HA
+  nextScene: Level1_HA
   winScreen: {fileID: 2053948638}
-  loseScreen: {fileID: 238565954}
 --- !u!4 &2055803884
 Transform:
   m_ObjectHideFlags: 0
@@ -5448,8 +5434,8 @@ SceneRoots:
   - {fileID: 180332511}
   - {fileID: 1606743049}
   - {fileID: 770165111}
+  - {fileID: 840660265}
   - {fileID: 6487412289010316598}
   - {fileID: 576672546}
-  - {fileID: 840660265}
   - {fileID: 6745348607949134667}
   - {fileID: 2055803884}

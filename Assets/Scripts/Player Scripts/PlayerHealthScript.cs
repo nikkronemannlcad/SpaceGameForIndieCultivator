@@ -48,5 +48,6 @@ public class PlayerHealthScript : MonoBehaviour
     {
         //ADD IFRAME LOGIC
         playerHitPoints -= damage;
+        //made it public so enemy collision script can access it 
     }
 }

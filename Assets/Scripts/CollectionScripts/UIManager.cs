@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject sp1Inventory;
     void Update()
     {
-        if (ip.shipPart1Collected)
+        if (ip.shipPartsCollected == 1)
         {
             sp1Inventory.SetActive(true);
         }

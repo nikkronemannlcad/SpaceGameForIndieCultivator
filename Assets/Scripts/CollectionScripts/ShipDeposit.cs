@@ -18,7 +18,7 @@ public class ShipDeposit : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && ip.shipPart1Collected)
+        if (other.gameObject.CompareTag("Player") && ip.shipPartsCollected >= 1)
         {
             Debug.Log("canDeposit");
             inShipZone = true;
@@ -37,7 +37,7 @@ public class ShipDeposit : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && ip.shipPart1Collected && inShipZone)
+        if (Input.GetKeyDown(KeyCode.E) && ip.shipPartsCollected >= 1 && inShipZone)
         {
             Debug.Log("dropped the item");
 

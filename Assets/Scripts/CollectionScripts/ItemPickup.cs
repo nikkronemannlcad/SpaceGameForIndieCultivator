@@ -7,7 +7,7 @@ public class ItemPickup : MonoBehaviour
     /// This collection bool will be used by UI to trigger when that item should show up in their inventory
     /// </summary> 
     
-    public bool shipPart1Collected;
+    public int shipPartsCollected;
     [SerializeField] private GameObject thisShipPart;
 
     void OnTriggerEnter(Collider other)
@@ -15,8 +15,8 @@ public class ItemPickup : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("got the item");
-            shipPart1Collected = true;
-            //will probably have to make a specific script that controls what each ship part is for the collection variable for variation
+            shipPartsCollected++;
+            //will probably put this variable in a game manager object bc 
             //for now, it lives within item pickup 
             thisShipPart.SetActive(false);
         }

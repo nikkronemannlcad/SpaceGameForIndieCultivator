@@ -10,7 +10,7 @@ public class PlayerSpawner : MonoBehaviour
     //Attach this to an Empty and Just use the Empties location to set spawn points for the new levels pls Kaela
     //The Camera might be a little bit messed up because of this but ima try and fix it.
     [SerializeField] private Transform spawnlocation;
-        
+
     void Start()
     {
         if (playerPref == null && cameraPref == null && spawnlocation == null)
