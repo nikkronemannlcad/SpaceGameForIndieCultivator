@@ -5,8 +5,7 @@ public class ItemPickup : MonoBehaviour
     /// <summary>
     /// This script controls item visibility when a player collects an ship parts throughout the level
     /// This collection bool will be used by UI to trigger when that item should show up in their inventory
-    /// </summary>
-    /// 
+    /// </summary> 
     
     public bool shipPart1Collected;
     [SerializeField] private GameObject thisShipPart;
@@ -17,6 +16,8 @@ public class ItemPickup : MonoBehaviour
         {
             Debug.Log("got the item");
             shipPart1Collected = true;
+            //will probably have to make a specific script that controls what each ship part is for the collection variable for variation
+            //for now, it lives within item pickup 
             thisShipPart.SetActive(false);
         }
     }

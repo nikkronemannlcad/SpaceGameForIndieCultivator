@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerHealthScript : MonoBehaviour
 {
-    [SerializeField] private int playerHitPoints = 0;
+    public int playerHitPoints = 0;
+
+    //hi nik sorry making ur int public so i can access it in the EndGameController :P
+    //also perchance delete this and write a full comment on this script for points >:D
 
     private GameObject spawnpoint;
     private void Start()

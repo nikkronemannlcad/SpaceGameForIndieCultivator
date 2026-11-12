@@ -11,6 +11,7 @@ public class ShipDeposit : MonoBehaviour
     
     //[SerializeField] private bool thisPartCollected;
     [SerializeField] private bool inShipZone;
+    public bool allPiecesCollected;
     [SerializeField] private GameObject depositMessage;
 
     public ItemPickup ip;
@@ -39,6 +40,11 @@ public class ShipDeposit : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && ip.shipPart1Collected && inShipZone)
         {
             Debug.Log("dropped the item");
+
+            //THIS WILL NOT BE HERE FOR FINAL
+            //for now bc we only need one ship part for the demo at minimum I am placing the win bool here
+            //we are probably going to change what the win bool is but no matter what its going to trigger the win screen
+            allPiecesCollected = true;
         }
     }
 }
