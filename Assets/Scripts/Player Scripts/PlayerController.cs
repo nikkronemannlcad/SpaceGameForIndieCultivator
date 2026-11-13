@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public PlayerHealthScript phs;
 
 
-    //Gonna Start Testing changing the angle for movement (Hansen please make the gun shoot based on which direction character is facing)
+    //Gonna Start Testing changing the angle for movement
     //Most likely going to need to nerf strafing and back strafing because movement is a little cooked
     //(I might fix but if one of you guys is interested in attempting go for it on your own branch).
     //-Nik
@@ -34,13 +34,13 @@ public class PlayerController : MonoBehaviour
         {
             jumpPressed = true;
         }
+        float mouseX = Input.GetAxis("Mouse X") * mouseSense * Time.deltaTime;
+        transform.Rotate(Vector3.up * mouseX);
     }
     private void FixedUpdate()
     {
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
-        float mouseX = Input.GetAxis("Mouse X") * mouseSense * Time.deltaTime;
-        transform.Rotate(Vector3.up * mouseX);
 
         Vector3 move = new Vector3(movement.x, 0, movement.y).normalized;
         move = transform.TransformDirection(move);

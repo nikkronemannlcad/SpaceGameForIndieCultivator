@@ -32,12 +32,12 @@ public class EndGameController : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(nextScene);
-        Debug.Log("buttonpressed");
+        Debug.Log("Load next scene button pressed");
     }
 
     public void Quit()
     {
         Application.Quit();
-        Debug.Log("buttonpressed");
+        Debug.Log("Quit game button pressed");
     }
 }
