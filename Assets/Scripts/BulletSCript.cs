@@ -5,19 +5,27 @@ public class BulletSCript : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private GameObject wall;
     [SerializeField] private GameObject enemy;
-
+    [SerializeField] private GameObject player;
+    [SerializeField] private float rotateX;
+    [SerializeField] private float rotateY;
+ 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-            rb = GetComponent<Rigidbody>();
-            wall = GameObject.FindWithTag("Wall");
-            //enemy = GameObject.FindWithTag("Enemy");
+        rb = GetComponent<Rigidbody>();
+        wall = GameObject.FindWithTag("Wall");
+        player = GameObject.FindWithTag("Player");
+        //enemy = GameObject.FindWithTag("Enemy");
+        rotateX = Mathf.Cos(player.transform.rotation.y);
+        rotateY = Mathf.Sin(player.transform.rotation.y);
     }
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = new Vector3 (1f, 0f, 0f);
-            rb.AddForce(direction);
+        Vector3 direction = new Vector3 (rotateY, 0f, rotate);
+        rb.AddForce(direction);
+
+        Debug.Log(direction);
     }
 
     void OnTriggerEnter (Collider other)
@@ -34,3 +42,4 @@ public class BulletSCript : MonoBehaviour
         }
     }
 }
+
