@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class BulletSCript : MonoBehaviour
@@ -22,7 +23,7 @@ public class BulletSCript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = new Vector3 (rotateY, 0f, rotate);
+        Vector3 direction = new Vector3 (rotateY, 0f, 0);
         rb.AddForce(direction);
 
         Debug.Log(direction);

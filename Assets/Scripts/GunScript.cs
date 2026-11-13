@@ -15,7 +15,7 @@ public class GunScript : MonoBehaviour
         Vector3 playerPos = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Instantiate(Bullet,playerPos ,Quaternion.identity);
+            Instantiate(Bullet, transform.position , transform.rotation);
         }
     }
 }
